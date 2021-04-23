@@ -21,3 +21,7 @@ class UserRegistration:
     def phone_number_regex(self, phone_number):
         phone_number_pattern = "^[9][1][ ][6-9][0-9]{9}$"
         return bool(re.match(phone_number_pattern, phone_number))
+
+    def password_regex(self, password):
+        password_regex = "^(?=.*[\\@\\#\\$\\%\\&\\_\\,\\.])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$"
+        return bool(re.match(password_regex, password))

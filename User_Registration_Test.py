@@ -53,6 +53,18 @@ class TestUserRegistration(unittest.TestCase):
         result = user.phone_number_regex(phone_number)
         self.assertFalse(result)
 
+    def test_password_regex_givenCorrectPassword_shouldReturnTrue(self):
+        password = "doD12#nbD"
+        user = UserRegistration()
+        result = user.password_regex(password)
+        self.assertTrue(result)
+
+    def test_password_regex_givenIncorrectPassword_shouldReturnTrue(self):
+        password = "source"
+        user = UserRegistration()
+        result = user.password_regex(password)
+        self.assertFalse(result)
+
 
 if __name__ == '__main__':
     unittest.main()
