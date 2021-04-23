@@ -29,6 +29,18 @@ class TestUserRegistration(unittest.TestCase):
         result = user.last_name_regex(last_name)
         self.assertFalse(result)
 
+    def test_email_regex_givenCorrectEmail_shouldReturnTrue(self):
+        email = "ak657harley@gmail.com"
+        user = UserRegistration()
+        result = user.email_regex(email)
+        self.assertTrue(result)
+
+    def test_email_regex_givenCorrectEmail_shouldReturnFalse(self):
+        email = "abc.100@hggdb.cvjhdb"
+        user = UserRegistration()
+        result = user.email_regex(email)
+        self.assertFalse(result)
+
 
 if __name__ == '__main__':
     unittest.main()
